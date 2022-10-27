@@ -1,0 +1,37 @@
+<form class="add-car-form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="name-color-year">
+            <div class="div">
+                <label for="name">Назва авто: </label>
+            <input class="input" type="text" name="name" formControlName="name">
+            </div>
+            <div>
+                <label for="color">Колір: </label>
+            <input class="input" type="text" name="color" formControlName="color">
+            </div>
+            <div>
+                <label for="year">Рік випуску: </label>
+            <input class="input" type="number" name="color" formControlName="year">
+            </div>
+        </div>
+        <div class="image-box">
+            <p class="add-photo-text">Фото повинно бути меншим 1Мб та відповідати формату фотографії:</p>
+            <input class="input-file" type="file"  #file accept="image/*" formControlName="photo" multiple
+                (change)="addPhoto($event)">
+            <button class="add-photo-btn btn" type="button" (click)="file.click()">Завантажити фото</button>
+            <img class="add-car-photo" src="{{url}}" alt="фото не прикріплене">
+        </div>
+        <div class="form-group">
+            <label for="details">Опис авто</label>
+            <textarea name="details" class="textarea" cols="30" rows="10" formControlName="info" 
+            placeholder="Введіть сюди будь-які дані про авто, наприклад: вінкод авто, номерний знак, модифікація двигуна">asd</textarea>
+        </div>
+        <button class="btn add-car-submit" type="submit" [disabled]="!form.valid">Добавити авто</button>
+        <span class="err" *ngIf="!form.valid">* Потрібно заповнити усі поля</span>
+</form>
+
+<article *ngIf="active">
+    <div class="alert-window">
+        <p class="add-car-window-p">Автомобіль добавлено</p>
+        <button class="btn" (click)="alertWindowClose()">Ok</button>
+    </div>
+</article>

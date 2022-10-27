@@ -1,0 +1,300 @@
+.container {
+    --orange-color: #fea866;
+    --brown-color: #fec192;
+    --gray-color: rgb(241, 241, 241);
+    background-color: var(--orange-color);
+    font-size: 18px;
+    height: 100vh;
+}
+
+/* ______________________________hidden, show______________________________________ */
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
+/* ________________________button, input, textarea, label ___________________ */
+.input {
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    height: 2rem;
+    outline: none;
+    padding-left: 0.8rem;
+}
+
+.btn {
+    border-radius: 7px;
+    border: none;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    width: fit-content;
+    background-color: var(--gray-color)
+}
+.btn:disabled {
+    background-color: rgb(120, 120, 120)
+}
+
+.textarea {
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 1vh;
+    font-size: 1.1rem;
+}
+
+.label {
+    margin: 0 0.5vw 0 2vw;
+}
+
+/* _____________________ Header _____________________________________ */
+header {
+    display: flex;
+    align-items: baseline;
+    background-color: var(--orange-color);
+}
+
+.search {
+    display: flex;
+    align-items: baseline;
+    width: 35%;
+    padding-left: 5%;
+}
+
+.header-input {
+    margin: 1vw;
+}
+
+.header-btn {
+    height: 2.5rem;
+}
+
+.header-btn:focus {
+    background-color: gray
+}
+
+.add-car {
+    padding-left: 5%;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    width: 18%;
+}
+
+.contact {
+    padding-left: 5%;
+}
+
+/* ________________________Main__________________________________ */
+
+.main {
+    background-color: var(--brown-color);
+    padding: 1vw;
+}
+
+/* ____________________________Search____________________________________ */
+.search-container {
+    position: relative;
+}
+
+.car-show {
+    margin: 1vw;
+    padding: 1vw;
+    background-color: #f7d8c1;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.add-info{
+    margin: 0 2vw;
+}
+
+/* ____________________________add-car-window______________________________________ */
+
+.window {
+    width: 92vw;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 1vw;
+    background-color: var(--gray-color);
+    padding: 2vw;
+}
+
+.textarea-window {
+    width: 98%;
+    height: 50vh;
+}
+
+.btn-close {
+    position: absolute;
+    top: 1vw;
+    right: 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: black solid 1px;
+    padding: 2px 5px;
+}
+
+.btn-box {
+    display: flex;
+}
+
+.btn-save {
+    margin: 2vh 0 0 40vw;
+    background-color: white;
+    border: rgb(169, 168, 168) solid 1px;
+}
+
+.input-file {
+    display: none;
+}
+
+.add-photo {
+    background-color: white;
+    border: rgb(169, 168, 168) solid 1px;
+    height: fit-content;
+    padding: 0.8rem;
+}
+
+.window-photo {
+    width: 8vw;
+    height: 8vw;
+    margin-left: 1vw;
+}
+
+/*________________________Watch-car______________________________________ */
+
+.watch-car-window{
+    width: 92vw;
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 1vw;
+        background-color: var(--gray-color);
+        padding: 2vw;
+}
+
+.watch-car-header{
+    display: flex;
+    justify-content: space-around;
+    margin: 1vw;
+    background-color: var(--gray-color);
+}
+
+.watch-car-text{
+     width: 60vw;
+}
+
+.watch-car-title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.watch-car-info{
+    font-size: 1.5rem;
+}
+
+.photo-watch-car{
+    width: 20vw;
+    height: auto;
+    box-shadow: 0 0 15px rgb(92, 92, 92) ;
+}
+
+.watch-car-close{
+position: absolute;
+    top: 1vw;
+    right: 1vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: black solid 1px;
+    padding: 2px 5px;
+}
+
+.details{
+    padding: 1vw;
+}
+
+.photo-detail{
+    margin: 0.5vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+.photo-detail:active{
+    position: fixed;
+    top: 2vw;
+    left: 2vw;
+    width: 92vw;
+    height: auto;
+}
+
+/* __________________________ add-car___________________________________ */
+.add-car-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-color-year{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-box{
+    margin-top: 3vh;
+    padding-top: 2vh;
+    display: flex;
+    align-items:center;
+    border:1px solid var(--orange-color)
+}
+
+.add-photo-text{
+width: 30vw;
+margin: 0 1vw;
+}
+
+.add-photo-btn{
+    margin-right: 1vw;
+   height: 3rem;
+}
+
+.add-car-submit {
+    margin: 2vh auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 1vw 0.5vh 1vw;
+}
+
+.err{
+    color: red;
+    text-align: center;
+}
+
+.alert-window{
+    width: 100vw;
+    height: 100vw;
+    background-color:white;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+.add-car-photo{
+    height: 5vw;
+    width: auto;
+    align-items:center;
+}

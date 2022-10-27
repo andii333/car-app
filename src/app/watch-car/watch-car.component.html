@@ -1,0 +1,21 @@
+<div class="watch-car-window">
+    <div class="watch-car-header">
+        <div class="watch-car-text">
+            <p class="watch-car-title">{{car.name}} {{car.year}}р.в.</p>
+            <p class="watch-car-info">{{car.info}}</p>
+        </div>
+        <img class="photo-watch-car" src="{{car.photo}}" alt="фото не прикріплене">
+    </div>
+    <div class="details" *ngFor="let detail of details">
+        <fieldset>
+            <legend class="detail-field">Кілометраж: {{detail['kilometrage'] | number}} тис.км 
+        &mdash;&mdash; Час заміни: {{detail['date'] | date: 'dd.MM.yyyy'}}
+            </legend>
+            <p class="detail-field-text">{{detail['info']}}</p>
+            <div class="box-photo-detail" *ngIf="detail['photo']">
+                <img *ngFor="let det of detail['photo']" class="photo-detail" src="{{det}}" alt="photo detail">
+            </div>
+        </fieldset>
+    </div>
+    <button class="watch-car-close btn" (click)="close()">x</button>
+</div>
