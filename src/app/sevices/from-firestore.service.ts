@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { arrayUnion, collection, doc, DocumentData, getDoc, getDocs, getFirestore, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
+import { collection, doc, DocumentData, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 import { CarClass } from 'src/app/classes/car-class';
-import { Details } from 'src/app/interfaces/details';
 import { DetailInterface } from '../interfaces/detail-interface';
+import { ToFirestoreService } from './to-firestore.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,26 +13,34 @@ import { DetailInterface } from '../interfaces/detail-interface';
 export class FromFirestoreService {
   app = initializeApp(environment.firebaseConfig);
   db = getFirestore(this.app);
-  carDetails: DetailInterface[] = []
-  constructor() {
-    
+  carDetails: DetailInterface[] = [];
+  cars: CarClass[] = [];
+
+  constructor(private serviceToFirestore: ToFirestoreService) { 
+    this.getCars()
   }
-  
 
   async getData(car: CarClass) {
     const docRef = doc(this.db, "cars", `${car.name + ' ' + car.year + 'p'}`);
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
-    this.carDetails.push(docSnap.data() as DetailInterface)
+    const docSnap = await getDoc(docRef);
+      this.carDetails.push(docSnap.data() as DetailInterface)
   }
 
+  async getCars() {
+    const querySnapshot = await getDocs(collection(this.db, "cars"));
+    querySnapshot.forEach((doc) => {
+      if (doc) {
+        const car = new CarClass;
+        car.name = doc.data()['car'].name;
+        car.year = doc.data()['car'].year;
+        car.color = doc.data()['car'].color;
+        car.info = doc.data()['car'].info;
+        car.photo = doc.data()['car'].photo;
+        this.cars.push(car);
+      }
+    });
+  }
 
-  // async addDetails(details:Details){
-  //   const carRef = doc(this.db, "cars", `${this.car.name + ' ' + this.car.year + 'p'}`);
-  //   await updateDoc(carRef, {
-  //     regions: arrayUnion(details)
-  //   });
-  // }
-}
+  
+
 }

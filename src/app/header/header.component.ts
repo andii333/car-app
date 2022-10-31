@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DocumentData } from 'firebase/firestore';
+import { FromFirestoreService } from '../sevices/from-firestore.service';
+import { ToFirestoreService } from '../sevices/to-firestore.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['../app.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+ 
+  constructor(private serviceFromFirestore: FromFirestoreService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit() {
+    // await this.serviceFromFirestore.getCars()
   }
-
+  
 }

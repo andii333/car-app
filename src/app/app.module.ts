@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { MainComponent } from './main/main.component';
 import { WindowComponent } from './add-details-window/add-details-window.component';
 import { WatchCarComponent } from './watch-car/watch-car.component';
+import { NumberPipe } from './pipes/numberPipe.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { WatchCarComponent } from './watch-car/watch-car.component';
     MainComponent,
     WindowComponent,
     WatchCarComponent,
+    NumberPipe
   ],
   imports: [
     BrowserModule,

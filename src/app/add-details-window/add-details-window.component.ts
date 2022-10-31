@@ -11,8 +11,9 @@ import { ToFirestoreService } from '../sevices/to-firestore.service';
 export class WindowComponent implements OnInit {
   form!: FormGroup;
   urls: string[] =[];
+  
   constructor(public service: ToFirestoreService,
-    public asd: SearchComponent,
+    public sc: SearchComponent,
     private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -47,7 +48,7 @@ export class WindowComponent implements OnInit {
   }
 
   close() {
-    this.asd.activWindow = false;
+    this.sc.activWindow = false;
   }
 
   removeImg(url:string){

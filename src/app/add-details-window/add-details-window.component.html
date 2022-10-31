@@ -1,9 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="window">
-        <label class="label" for="kilometrage">Кілометраж:</label>
-        <input class="input" type="text" name="kilometrage" formControlName="kilometrage">
-        <label class="label" for="date">Дата:</label>
-        <input class="input" type="date" name="date" formControlName="date">
+        <div>
+            <label class="label" for="kilometrage">Кілометраж:</label>
+            <input class="input" type="text" name="kilometrage" formControlName="kilometrage">
+        </div>
+        <div>
+            <label class="label" for="date">Дата:</label>
+            <input class="input" type="date" name="date" formControlName="date">
+        </div>
         <hr>
         <p>Роботи що виконувалися:</p>
         <textarea class="textarea-window textarea" name="info" formControlName="info"></textarea>

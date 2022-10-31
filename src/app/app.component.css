@@ -8,12 +8,14 @@
 }
 
 /* ______________________________hidden, show______________________________________ */
-.hidden{
+.hidden {
     display: none;
 }
-.show{
+
+.show {
     display: block;
 }
+
 /* ________________________button, input, textarea, label ___________________ */
 .input {
     border-radius: 10px;
@@ -33,6 +35,7 @@
     width: fit-content;
     background-color: var(--gray-color)
 }
+
 .btn:disabled {
     background-color: rgb(120, 120, 120)
 }
@@ -54,13 +57,14 @@ header {
     display: flex;
     align-items: baseline;
     background-color: var(--orange-color);
+    padding: 1vh 0;
 }
 
 .search {
     display: flex;
+    justify-content: center;
     align-items: baseline;
-    width: 35%;
-    padding-left: 5%;
+    width: 33%;
 }
 
 .header-input {
@@ -76,14 +80,17 @@ header {
 }
 
 .add-car {
-    padding-left: 5%;
+    display: flex;
+    justify-content: center;
     border-right: 1px solid white;
     border-left: 1px solid white;
-    width: 18%;
+    width: 33%;
 }
 
 .contact {
-    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    width: 33%;
 }
 
 /* ________________________Main__________________________________ */
@@ -102,6 +109,7 @@ header {
     margin: 1vw;
     padding: 1vw;
     background-color: #f7d8c1;
+    border-radius: 15px;
 }
 
 .title {
@@ -111,11 +119,11 @@ header {
     margin: 0;
 }
 
-.add-info{
+.add-info {
     margin: 0 2vw;
 }
 
-/* ____________________________add-car-window______________________________________ */
+/* ____________________________add-details-window______________________________________ */
 
 .window {
     width: 92vw;
@@ -171,45 +179,45 @@ header {
 
 /*________________________Watch-car______________________________________ */
 
-.watch-car-window{
+.watch-car-window {
     width: 92vw;
-        height: fit-content;
-        position: absolute;
-        top: 0;
-        left: 1vw;
-        background-color: var(--gray-color);
-        padding: 2vw;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 1vw;
+    background-color: var(--gray-color);
+    padding: 2vw;
 }
 
-.watch-car-header{
+.watch-car-header {
     display: flex;
     justify-content: space-around;
     margin: 1vw;
     background-color: var(--gray-color);
 }
 
-.watch-car-text{
-     width: 60vw;
+.watch-car-text {
+    width: 60vw;
 }
 
-.watch-car-title{
+.watch-car-title {
     font-size: 2.5rem;
     text-align: center;
     margin: 0;
 }
 
-.watch-car-info{
+.watch-car-info {
     font-size: 1.5rem;
 }
 
-.photo-watch-car{
+.photo-watch-car {
     width: 20vw;
     height: auto;
-    box-shadow: 0 0 15px rgb(92, 92, 92) ;
+    box-shadow: 0 0 15px rgb(92, 92, 92);
 }
 
-.watch-car-close{
-position: absolute;
+.watch-car-close {
+    position: absolute;
     top: 1vw;
     right: 1vw;
     font-size: 1.2rem;
@@ -218,17 +226,17 @@ position: absolute;
     padding: 2px 5px;
 }
 
-.details{
+.details {
     padding: 1vw;
 }
 
-.photo-detail{
+.photo-detail {
     margin: 0.5vw;
     width: 5vw;
     height: 5vw;
 }
 
-.photo-detail:active{
+.photo-detail:active {
     position: fixed;
     top: 2vw;
     left: 2vw;
@@ -242,28 +250,28 @@ position: absolute;
     flex-direction: column;
 }
 
-.name-color-year{
+.name-color-year {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.image-box{
+.image-box {
     margin-top: 3vh;
     padding-top: 2vh;
     display: flex;
-    align-items:center;
-    border:1px solid var(--orange-color)
+    align-items: center;
+    border: 1px solid var(--orange-color)
 }
 
-.add-photo-text{
-width: 30vw;
-margin: 0 1vw;
+.add-photo-text {
+    width: 30vw;
+    margin: 0 1vw;
 }
 
-.add-photo-btn{
+.add-photo-btn {
     margin-right: 1vw;
-   height: 3rem;
+    height: 3rem;
 }
 
 .add-car-submit {
@@ -276,15 +284,15 @@ margin: 0 1vw;
     margin: 3vh 1vw 0.5vh 1vw;
 }
 
-.err{
+.err {
     color: red;
     text-align: center;
 }
 
-.alert-window{
+.alert-window {
     width: 100vw;
     height: 100vw;
-    background-color:white;
+    background-color: white;
     opacity: 0.9;
     position: fixed;
     top: 0;
@@ -293,8 +301,168 @@ margin: 0 1vw;
     padding-top: 40vh;
 }
 
-.add-car-photo{
+.add-car-photo {
     height: 5vw;
     width: auto;
-    align-items:center;
+    align-items: center;
+}
+
+/* ___________________________ media _____________________________________ */
+
+@media screen and (max-width: 767px) {
+
+    /* ____________________Media header_____________________ */
+
+    header {
+        align-items: center
+    }
+
+    header>* {
+        margin: 1vh;
+    }
+
+    .header-btn {
+        width: 100%;
+    }
+
+    .search {
+        width: 35%;
+    }
+
+    .add-car {
+        width: 32%;
+        margin: 0 2%;
+        border: none
+    }
+
+    .contact {
+        width: 30%;
+    }
+
+    .main {
+        padding: 3%;
+    }
+
+    /* __________________________Media add-car___________________________________ */
+
+    .name-color-year {
+        flex-direction: column;
+    }
+
+    .name-color-year>* {
+        display: flex;
+        justify-content: space-between;
+        margin: 1vh 0;
+        align-items: center
+    }
+
+    .name-color-year>div>input {
+        width: 60%;
+    }
+
+    .image-box {
+        margin: 0;
+        flex-direction: column;
+        padding: 2vh;
+    }
+
+    .add-photo-text {
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+
+    .add-car-photo {
+        height: auto;
+        width: 50vw;
+        margin-top: 2vh;
+    }
+
+    .alert-window {
+        height: 100vh;
+
+    }
+
+
+    /* _____________Media add-details-window_________________ */
+
+    .window {
+        width: 93%;
+        padding: 3vw;
+        flex-direction: column;
+    }
+
+        .window > div {
+display: flex;
+flex-direction: column;
+margin: 2vh 0;
+        }
+
+    .textarea-window {
+        width: 95%;
+        height: 40vh;
+    }
+
+    .btn-save {
+       margin-left: 35vw;
+    }
+
+    .window-photo {
+        width: 60vw;
+        height: 40vw;
+        margin: 2vw;
+    }
+
+        .upload-images{
+           display: flex;
+           align-items: center;
+        }
+
+    /* __________Media Search___________ */
+    .car-show {
+        margin: 2vh 0;
+        padding: 2vw;
+        border-radius:15px;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+/* _____________ Media Watch-car__________ */
+
+ .watch-car-window {
+    width: 89vw;
+}
+
+.watch-car-header {
+    flex-direction: column;
+}
+
+.watch-car-text {
+    width: 80vw;
+}
+
+.watch-car-title {
+    font-size: 1.8rem;
+}
+
+.watch-car-info {
+    font-size: 1.2rem;
+}
+
+.photo-watch-car {
+    width: 100%;
+    height: auto;
+}
+
+.photo-detail {
+    margin: 0.5vw;
+    width: 48%;
+    height: 30vw;
+}
+
+.detail-field-text{
+margin: 0;
+}
+
 }

@@ -8,7 +8,7 @@
     </div>
     <div class="details" *ngFor="let detail of details">
         <fieldset>
-            <legend class="detail-field">Кілометраж: {{detail['kilometrage'] | number}} тис.км 
+            <legend class="detail-field">Кілометраж: {{detail['kilometrage'] | number2 }} тис.км 
         &mdash;&mdash; Час заміни: {{detail['date'] | date: 'dd.MM.yyyy'}}
             </legend>
             <p class="detail-field-text">{{detail['info']}}</p>

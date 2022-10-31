@@ -1,12 +1,14 @@
 <div class="search-container">
-<div class="car-show" *ngFor='let car of cars'>
-    <p class="title">Авто: "{{car.name}}" {{car.year}} року випуску</p>
-    <p>{{car.info}}</p>
-    <button class="add-info btn" (click)="showWindow(car)">Добавити дані</button>
-    <button class="add-info btn" (click)="showWatchCar(car)">Переглянути дані</button>
-</div>
+    <label class="label" for="search">Знайти авто:</label>
+    <input type="text" class="input header-input" name="search" (keyup)="searchCar($event)">
+    <div class="car-show" *ngFor='let car of cars'>
+        <p class="title">Авто: "{{car.name}}" {{car.year}} року випуску</p>
+        <p>{{car.info}}</p>
+        <button class="add-info btn" (click)="showWindow(car)">Добавити дані</button>
+        <button class="add-info btn" (click)="showWatchCar(car)">Переглянути дані</button>
+    </div>
 
-<add-details-window *ngIf="activWindow"></add-details-window>
-<app-watch-car *ngIf="activWatchCar"></app-watch-car>
+    <add-details-window *ngIf="activWindow"></add-details-window>
+    <app-watch-car *ngIf="activWatchCar"></app-watch-car>
 
 </div>
