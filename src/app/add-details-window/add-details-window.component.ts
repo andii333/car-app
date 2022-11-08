@@ -33,6 +33,7 @@ export class WindowComponent implements OnInit {
         reader.readAsDataURL(event.target.files[0]);
         reader.onload = (event: any) => {
           this.urls.push(event.target.result);
+          this.tooBigSizePhoto = false
         }
       } else { this.tooBigSizePhoto = true}
     }
