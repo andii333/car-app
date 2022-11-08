@@ -3,14 +3,16 @@
         <div>
             <label class="label" for="kilometrage">Кілометраж:</label>
             <input class="input" type="text" name="kilometrage" formControlName="kilometrage">
+            <span> км</span>
         </div>
-        <div>
+        <div class="data-add-details">
             <label class="label" for="date">Дата:</label>
             <input class="input" type="date" name="date" formControlName="date">
         </div>
         <hr>
         <p>Роботи що виконувалися:</p>
         <textarea class="textarea-window textarea" name="info" formControlName="info"></textarea>
+
         <div class="btn-box">
             <input class="input-file" type="file" #file accept="image/*" formControlName="photo" multiple
                 (change)="addPhoto($event)">
@@ -19,7 +21,9 @@
                 <img class="window-photo" src="{{url}}" alt="фото не прикріплене">
                 <button class="remove-img" type="button" (click)="removeImg(url)">x</button>
             </div>
+            <p *ngIf="tooBigSizePhoto">Фотографія занаддто велика (максимальний розмір фото 300кб)</p>
         </div>
+
         <button class="btn-save btn" type="submit" [disabled]="form.invalid">Зберегти</button>
         <button class="btn-close btn" (click)="close()">x</button>
     </div>

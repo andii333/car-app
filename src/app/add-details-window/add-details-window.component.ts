@@ -10,8 +10,8 @@ import { ToFirestoreService } from '../sevices/to-firestore.service';
 })
 export class WindowComponent implements OnInit {
   form!: FormGroup;
-  urls: string[] =[];
-  
+  urls: string[] = [];
+  tooBigSizePhoto = false;
   constructor(public service: ToFirestoreService,
     public sc: SearchComponent,
     private fb: FormBuilder) { }
@@ -27,31 +27,31 @@ export class WindowComponent implements OnInit {
   }
 
   addPhoto(event: any) {
-    if (event.target.files[0]) {
-      if (event.target.files[0].type.match(/image\/*/) == null) {
-      } else {
+    if (event.target.files[0] && event.target.files[0].type.match(/image\/*/) != null) {
+      if (event.target.files[0].size < 300000) {
         let reader = new FileReader();
         reader.readAsDataURL(event.target.files[0]);
         reader.onload = (event: any) => {
-          this.urls.push(event.target.result) ;
+          this.urls.push(event.target.result);
         }
-      }
+      } else { this.tooBigSizePhoto = true}
     }
   }
-  
-  submit() {
-    if (this.form.value.photo) {
-       this.form.value.photo = this.urls
-    }
-    this.service.addDetails(this.form.value);
-    this.close()
-  }
 
-  close() {
-    this.sc.activWindow = false;
-  }
 
-  removeImg(url:string){
-this.urls = this.urls.filter(e=>e!=url)
+submit() {
+  if (this.form.value.photo) {
+    this.form.value.photo = this.urls
   }
+  this.service.addDetails(this.form.value);
+  this.close()
+}
+
+close() {
+  this.sc.activWindow = false;
+}
+
+removeImg(url: string){
+  this.urls = this.urls.filter(e => e != url)
+}
 }

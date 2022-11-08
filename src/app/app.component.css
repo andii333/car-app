@@ -135,6 +135,10 @@ header {
     padding: 2vw;
 }
 
+.data-add-details{
+margin: 1% 0;
+}
+
 .textarea-window {
     width: 98%;
     height: 50vh;
@@ -238,10 +242,10 @@ header {
 
 .photo-detail:active {
     position: fixed;
-    top: 2vw;
-    left: 2vw;
-    width: 92vw;
-    height: auto;
+    top: 1vw;
+    left: 1vw;
+    width: auto;
+    height: 95vh;
 }
 
 /* __________________________ add-car___________________________________ */
